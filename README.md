@@ -88,7 +88,7 @@ return luxCity
 
 ### Connecting more nodes ###
 In this example we will connect all the nodes having the type `House` with the nodes having the type `Street`
-The `CREATE UNIQUE` is used to create a single relationship of a given type. We use this to avoid duplicates.
+>>The `CREATE UNIQUE` is used to create a single relationship of a given type. We use this to avoid duplicates.
 ```
 MATCH(rue_henri:Street{name:"Rue Henri VII"}) 
 MATCH(rue_evrard:Street{name:"rue evrard ketten"}) 
