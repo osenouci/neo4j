@@ -73,8 +73,8 @@ MATCH(jane:Person{name:"Jane Doe"})
 MATCH(john:Person{name:"John Doe"})
 MATCH(h1:House{number:12})
 MATCH(h2:House{number:1})
-CREATE(jane)-[r1:LIVES]->(h1)
-CREATE(john)-[r2:LIVES]->(h2)
+CREATE UNIQUE (jane)-[r1:LIVES]->(h1)
+CREATE UNIQUE (john)-[r2:LIVES]->(h2)
 return r1, r2
 ```
 ### Create more nodes ###
@@ -88,6 +88,7 @@ return luxCity
 
 ### Connecting more nodes ###
 In this example we will connect all the nodes having the type `House` with the nodes having the type `Street`
+The `CREATE UNIQUE` is used to create a single relationship of a given type. We use this to avoid duplicates.
 ```
 MATCH(rue_henri:Street{name:"Rue Henri VII"}) 
 MATCH(rue_evrard:Street{name:"rue evrard ketten"}) 
@@ -95,9 +96,9 @@ MATCH(h1:House{number:12})
 MATCH(h2:House{number:1})
 MATCH(h3:House{number:54})
 MATCH(h4:House{number:73})
-CREATE(h1)-[:LOCATED]->(rue_henri)
-CREATE(h2)-[:LOCATED]->(rue_henri)
-CREATE(h3)-[:LOCATED]->(rue_evrard)
-CREATE(h4)-[:LOCATED]->(rue_evrard)
+CREATE UNIQUE (h1)-[:LOCATED]->(rue_henri)
+CREATE UNIQUE (h2)-[:LOCATED]->(rue_henri)
+CREATE UNIQUE (h3)-[:LOCATED]->(rue_evrard)
+CREATE UNIQUE (h4)-[:LOCATED]->(rue_evrard)
 RETURN rue_henri, rue_evrard
 ```
