@@ -34,7 +34,7 @@ In this example we will do the following:
 3. Create 2 streets. (2 nodes of type `Street`)
 4. Create 1 city. (1 nodes of type `City`)
 
-Each of nodes will have different properties.
+Each of nodes will have different properties. For example, a house will have a `number` property used to represent the house number portion of the address. Another example will be the nodes of type `Person`, this type of nodes will have a property called name (The person's full name).
 
 ### Create the first house node ###
 
