@@ -5,5 +5,5 @@ services:
     ports:
      - "7474:7474"
     volumes:     ## adds folder with login/password
-     - /samba/dev/inno/neo4j/data:/data
-     - /samba/dev/inno/neo4j/plugins:/plugins   
+     - /dev/neo4j/data:/data
+     - /dev/neo4j/plugins:/plugins   
