@@ -1,0 +1,9 @@
+version: '2'
+services:
+  neo4j:
+    image: neo4j:3.0
+    ports:
+     - "7474:7474"
+    volumes:     ## adds folder with login/password
+     - /samba/dev/inno/neo4j/data:/data
+     - /samba/dev/inno/neo4j/plugins:/plugins   
