@@ -1,5 +1,28 @@
 # Neo4j: Cypher basics #
 
+Using the docke-compose file we can run nodejs on the fly. Download the project and navigate to the directory where the docker-compose file has been placed and execute
+```
+docker-compose up
+```
+This will download the neo4j image and run in the foreground. use the flag -d to run it in the background.
+
+The docker file looks like the following:
+```
+version: '2'
+services:
+  neo4j:
+    image: neo4j:3.0
+    ports:
+     - "7474:7474"
+    volumes:     ## adds folder with login/password
+     - /dev/neo4j/data:/data
+     - /dev/neo4j/plugins:/plugins   
+```
+We map the ports from the container to the host machine. The mapping format is as follows {host machine:container}
+If we want to use a different port on the host, port 1000 for example then we will modify the mapping to look something like this
+`"1000:7474"`.
+
+Finally we have volumes that can be used to persiste data. Containers don't maintain data unless we store it somewhere. Here we are mapping `dev/neo4j/data`on the host to the directory `data` on the container.
 
 ## Example: Creating nodes and linking them ##
 In this example we will do the following:
