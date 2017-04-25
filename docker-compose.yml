@@ -4,6 +4,6 @@ services:
     image: neo4j:3.0
     ports:
      - "7474:7474"
-    volumes:     ## adds folder with login/password
+    volumes:   
      - /dev/neo4j/data:/data
      - /dev/neo4j/plugins:/plugins   
