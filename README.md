@@ -22,7 +22,10 @@ We map the ports from the container to the host machine. The mapping format is a
 If we want to use a different port on the host, port 1000 for example then we will modify the mapping to look something like this
 `"1000:7474"`.
 
-Finally we have volumes that can be used to persiste data. Containers don't maintain data unless we store it somewhere. Here we are mapping `dev/neo4j/data`on the host to the directory `data` on the container.
+Finally we have volumes that can be used to persiste data. Containers don't maintain data unless we store it somewhere. 
+In this example we have two volumes:
+1. Data volume: Used to store the data created by the database. Here we are mapping `dev/neo4j/data`on the host to the directory `data` on the container.
+2. Plugin volume: Plugins are used to extend neo4j. Any plugins are placed in `/dev/neo4j/plugins` will be mounted on the container in the directory `/plugins`.
 
 ## Example: Creating nodes and linking them ##
 In this example we will do the following:
